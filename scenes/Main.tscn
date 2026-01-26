@@ -1,0 +1,150 @@
+[gd_scene load_steps=3 format=3 uid="uid://dvokma8gp3f3u"]
+
+[ext_resource type="Script" uid="uid://dns3b657afidd" path="res://scripts/Main.gd" id="1"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1"]
+content_margin_left = 20.0
+content_margin_top = 20.0
+content_margin_right = 20.0
+content_margin_bottom = 20.0
+bg_color = Color(0.15, 0.15, 0.15, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[node name="Main" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 40.0
+offset_top = 160.0
+offset_right = -40.0
+offset_bottom = -60.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 30
+
+[node name="Title" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 52
+text = "ATT Plugin Test"
+horizontal_alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+follow_focus = true
+
+[node name="Content" type="VBoxContainer" parent="VBoxContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 28
+
+[node name="SectionStatus" type="PanelContainer" parent="VBoxContainer/ScrollContainer/Content"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_1")
+
+[node name="SectionStatusVBox" type="VBoxContainer" parent="VBoxContainer/ScrollContainer/Content/SectionStatus"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 14
+
+[node name="SectionStatusTitle" type="Label" parent="VBoxContainer/ScrollContainer/Content/SectionStatus/SectionStatusVBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 36
+text = "Current Status"
+
+[node name="SectionStatusDesc" type="Label" parent="VBoxContainer/ScrollContainer/Content/SectionStatus/SectionStatusVBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.7, 0.7, 0.7, 1)
+theme_override_font_sizes/font_size = 22
+text = "Current App Tracking Transparency authorization status."
+autowrap_mode = 3
+
+[node name="StatusLabel" type="Label" parent="VBoxContainer/ScrollContainer/Content/SectionStatus/SectionStatusVBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.4, 0.8, 1, 1)
+theme_override_font_sizes/font_size = 32
+text = "Loading..."
+horizontal_alignment = 1
+
+[node name="GetStatusButton" type="Button" parent="VBoxContainer/ScrollContainer/Content/SectionStatus/SectionStatusVBox"]
+custom_minimum_size = Vector2(0, 70)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 28
+text = "Refresh Status"
+
+[node name="SectionPermission" type="PanelContainer" parent="VBoxContainer/ScrollContainer/Content"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_1")
+
+[node name="SectionPermissionVBox" type="VBoxContainer" parent="VBoxContainer/ScrollContainer/Content/SectionPermission"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 14
+
+[node name="SectionPermissionTitle" type="Label" parent="VBoxContainer/ScrollContainer/Content/SectionPermission/SectionPermissionVBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 36
+text = "Request Permission"
+
+[node name="SectionPermissionDesc" type="Label" parent="VBoxContainer/ScrollContainer/Content/SectionPermission/SectionPermissionVBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.7, 0.7, 0.7, 1)
+theme_override_font_sizes/font_size = 22
+text = "Request user authorization for app tracking. This will show the system dialog."
+autowrap_mode = 3
+
+[node name="RequestPermissionButton" type="Button" parent="VBoxContainer/ScrollContainer/Content/SectionPermission/SectionPermissionVBox"]
+custom_minimum_size = Vector2(0, 70)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 28
+text = "Request Permission"
+
+[node name="LogLabel" type="Label" parent="VBoxContainer/ScrollContainer/Content"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 32
+text = "Log"
+
+[node name="LogOutput" type="TextEdit" parent="VBoxContainer/ScrollContainer/Content"]
+custom_minimum_size = Vector2(0, 400)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 22
+editable = false
+wrap_mode = 1
+caret_blink = true
+caret_blink_interval = 0.5
+
+[node name="ClearLogButton" type="Button" parent="VBoxContainer/ScrollContainer/Content"]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 26
+text = "Clear Log"
+
+[connection signal="pressed" from="VBoxContainer/ScrollContainer/Content/SectionStatus/SectionStatusVBox/GetStatusButton" to="." method="_on_get_status_pressed"]
+[connection signal="pressed" from="VBoxContainer/ScrollContainer/Content/SectionPermission/SectionPermissionVBox/RequestPermissionButton" to="." method="_on_request_permission_pressed"]
+[connection signal="pressed" from="VBoxContainer/ScrollContainer/Content/ClearLogButton" to="." method="_on_clear_log_pressed"]

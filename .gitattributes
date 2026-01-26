@@ -1,0 +1,12 @@
+* text=auto eol=lf
+
+/** export-ignore
+
+/addons !export-ignore
+/addons/** !export-ignore
+
+/ios !export-ignore
+/ios/** !export-ignore
+
+/android/godotx_att_* !export-ignore
+/android/godotx_att_*/** !export-ignore

@@ -1,0 +1,19 @@
+[config]
+name="GodotxATT"
+binary="GodotxATT.xcframework"
+
+initialization="initialize_godotx_att_module"
+deinitialization="uninitialize_godotx_att_module"
+
+[dependencies]
+linked=[]
+embedded=[]
+system=["Foundation.framework", "AppTrackingTransparency.framework"]
+
+capabilities=[]
+
+files=[]
+
+linker_flags=[
+    "-ObjC",
+]
