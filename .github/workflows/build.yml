@@ -37,12 +37,6 @@ jobs:
       - name: Build Godot headers
         run: make build-godot-headers
 
-      - name: Setup SDK
-        run: make setup-sdk
-
-      - name: Unsign SDK
-        run: make unsign-sdk
-
       - name: Build iOS
         run: make build-apple
 
