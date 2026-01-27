@@ -84,7 +84,7 @@ Starting with iOS 14.5, apps must request user authorization to track them or ac
 3. In **Application → Additional Plist Content**, add:
 
 ```xml
-<key>NSUserTrackingUsageDescription</key><string>This identifier will be used to deliver personalized ads to you.</string>
+<key>NSUserTrackingUsageDescription</key><string>This identifier will be used to deliver personalized informations to you.</string>
 ```
 
 > **Important:** The `NSUserTrackingUsageDescription` is required. Without it, the app will crash when requesting tracking permission. Customize the message to explain why your app needs tracking.
