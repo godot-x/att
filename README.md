@@ -288,6 +288,10 @@ Contributions are welcome! Here's how you can help:
 - **Signals**: Use snake_case (e.g., `permission_result`)
 - **Methods**: Use snake_case following GDScript conventions
 
+## Screenshot
+
+<img width="300" src="extras/images/screenshot.png" alt="Screenshot">
+
 ## License
 
 MIT License - See [LICENSE](LICENSE)
