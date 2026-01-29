@@ -37,7 +37,7 @@ Starting with iOS 14.5, apps must request user authorization to track them or ac
 
 | Component | Version |
 |-----------|---------|
-| Godot | 4.5-stable |
+| Godot | 4.6-stable |
 | Min iOS | 14.0 |
 
 ## Quick Start
