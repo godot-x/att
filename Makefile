@@ -27,7 +27,7 @@ APPLE_SDK_ARCHS  = iphoneos/arm64 iphonesimulator/arm64 iphonesimulator/x86_64
 # ============================================================================
 # Version Configuration
 # ============================================================================
-GODOT_VERSION = 4.6-stable
+GODOT_VERSION = 4.7-stable
 GODOT_REPO    = https://github.com/godotengine/godot.git
 
 # ============================================================================
@@ -184,9 +184,11 @@ package:
 	@cp -a addons godotx_att/
 	@echo "→ Copying iOS plugin..."
 	@cp -a ios godotx_att/
+	@echo "→ Copying license and readme..."
+	@cp -a LICENSE godotx_att/
+	@cp -a README.md godotx_att/
 	@echo "→ Creating zip archive..."
 	@zip -ry godotx_att.zip godotx_att
-	@rm -rf godotx_att
 	@echo ""
 	@echo "====================================================================="
 	@echo "✓ Package created: godotx_att.zip"
