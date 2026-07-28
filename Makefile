@@ -185,8 +185,8 @@ package:
 	@echo "→ Copying iOS plugin..."
 	@cp -a ios godotx_att/
 	@echo "→ Copying license and readme..."
-	@cp -a LICENSE godotx_att/
-	@cp -a README.md godotx_att/
+	@cp -a LICENSE godotx_att/addons/godotx_att/
+	@cp -a README.md godotx_att/addons/godotx_att/
 	@echo "→ Creating zip archive..."
 	@zip -ry godotx_att.zip godotx_att
 	@echo ""
